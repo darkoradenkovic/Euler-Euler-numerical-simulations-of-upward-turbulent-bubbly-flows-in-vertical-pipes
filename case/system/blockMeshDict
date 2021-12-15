@@ -1,0 +1,197 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+ 
+
+
+
+
+
+scale 1;
+   
+
+
+
+
+
+
+
+
+
+
+
+   // rux=ruz
+
+
+
+
+
+
+
+
+
+
+
+// // // Brojevi podeoka u blokovima
+
+ // za unutrasnji blok 0, ovaj broj oznacava i broj podeoka radijalnim zracima!!!
+
+ // broj kruznih podeoka u blokovima 1 2 
+ // simpleGrading za blokove 1 2 3 4 10 11 12 13 ... u z pravcu (u lokalnim
+                  // koordinatnim sistemima za svaki blok z osa je postavljena u radijalnom pravcu)
+
+  
+
+
+vertices
+(
+ // RavanA
+  (0.0 0.0 0.0) // Vertex A0 = 0  
+  (0.007 0.0 0) // Vertex A1 = 1 
+  (0.0125 0.0 0) // Vertex A2 = 2 
+  (0.00883883475 0.0 -0.00883883475) // Vertex A3 = 3 
+  (0.006187184325 0.0 -0.006187184325) // Vertex A4 = 4  
+  (0 0.0 -0.007) // Vertex A5 = 5 
+  (0 0.0 -0.0125) // Vertex A6 = 6 
+
+ // RavanB
+  (0.0 2 0.0) // Vertex B0 = 7  
+  (0.007 2 0) // Vertex B1 = 8 
+  (0.0125 2 0) // Vertex B2 = 9 
+  (0.00883883475 2 -0.00883883475) // Vertex B3 = 10 
+  (0.006187184325 2 -0.006187184325) // Vertex B4 = 11  
+  (0 2 -0.007) // Vertex B5 = 12 
+  (0 2 -0.0125) // Vertex B6 = 13 
+
+
+);
+
+blocks
+(    
+	// Svaki blok ima svoj koordinatni sistem !
+
+   hex (0 1 4 5 7 8 11 12) (20 20 100) 
+   simpleGrading
+	(
+	   1
+	   1
+	   1
+	)						   //   blok 0
+
+   hex (1 2 3 4 8 9 10 11) (20 20 100) 
+   simpleGrading
+	(
+	   0.15
+	   1
+	   1
+	)						   //   blok 1
+
+   hex (4 3 6 5 11 10 13 12) (20 20 100) 
+   simpleGrading
+	(
+	   0.15
+	   1
+	   1
+	)						   //   blok 2
+
+ 
+
+
+);
+
+  edges
+  (
+   	// Ravan A
+	arc 2 3 (0.0115484941625 0.0 -0.0047835429)
+	arc 9 10 (0.0115484941625 2 -0.0047835429)
+
+	arc 3 6 (0.00625 0.0 -0.01082531755)
+	arc 10 13 (0.00625 2 -0.01082531755)
+
+	arc 1 4 (0.006812498 0.0 -0.0030935921625)
+	arc 8 11 (0.006812498 2 -0.0030935921625)
+
+	arc 5 4 (0.0030935921625 0.0 -0.006812498)
+	arc 12 11 (0.0030935921625 2 -0.006812498)
+
+  );
+
+boundary
+(
+    inlet
+    {
+       type patch;
+       faces
+       (
+         (0 5 4 1)
+         (1 4 3 2)
+         (6 3 4 5)
+      );
+    }
+
+    outlet
+    {
+      type patch;
+      faces
+      (
+        (7 8 11 12)
+        (8 9 10 11)
+        (12 11 10 13)
+      );
+    } 
+
+	walls
+	{
+	  type wall;
+	  faces
+	  (
+	    (2 3 10 9)
+	    (3 6 13 10)
+	  );
+	} 
+
+	symmetry1
+	{
+	  type symmetryPlane;
+	  faces
+	  (
+	    (0 1 8 7)
+	    (1 2 9 8)
+	  );
+	} 
+	symmetry2
+	{
+	  type symmetryPlane;
+	  faces
+	  (
+	    (0 7 12 5)
+	    (6 5 12 13)
+	  );
+	} 
+);
+
+mergePatchPairs
+(
+);
+    
+    
+
+
+
+
+
+
+

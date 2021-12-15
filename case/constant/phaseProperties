@@ -1,0 +1,136 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      phaseProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+phases (air water);
+
+air
+{
+    myDiameterModel   isothermal;
+    isothermalCoeffs
+    {
+        d0              3.21e-3;
+        p0              1e5; 
+    }
+
+    residualAlpha   1e-6;
+}
+
+water
+{
+    myDiameterModel   constant;
+    constantCoeffs
+    {
+        d               1e-4;
+    }
+
+    residualAlpha   1e-6;
+}
+
+blending
+{
+    default
+    {
+        type            none;
+        continuousPhase water;
+    }
+}
+
+sigma
+(
+    (air and water)     0.072
+);
+
+aspectRatio
+(
+    (air in water)
+    {
+        type            constant;
+        E0              1.0;
+    }
+
+    (water in air)
+    {
+        type            constant;
+        E0              1.0;
+    }
+);
+
+drag
+(
+    (air in water)
+    {
+        type            IshiiZuberR;
+        residualRe      1e-3;
+        mySwarmCorrection
+        {
+            type        none;
+        }
+    }
+//		A			16.0;
+);
+
+virtualMass
+(    
+        (air in water)
+    {
+        type            constantCoefficient;
+        Cvm             0.5;
+        residualRe      1e-3;
+        mySwarmCorrection
+        {
+            type        none;
+        }
+    }
+);
+
+
+lift
+(
+    (air in water)
+    {
+        type            ShaverPodowski;
+        CL0             0.03;
+    }
+    
+);
+
+
+wallLubrication
+(
+        (air in water)
+    {
+        type            Lubchenko;
+        sigma             1;
+    }
+);
+
+turbulentDispersion
+(
+        (air in water)
+    {
+        type            Burns;
+        sigma             1;
+//        C               0.75;
+    }
+
+);
+
+// Minimum allowable pressure
+pMin            10000;
+
+
+// ************************************************************************* //

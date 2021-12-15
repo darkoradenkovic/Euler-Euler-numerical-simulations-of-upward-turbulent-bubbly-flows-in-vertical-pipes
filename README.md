@@ -4,4 +4,6 @@ This is a numerical solver for Euler-Euler numerical simulations of upward turbu
 
 First install library myTurbulenceModels, by running ./Allwmake inside myTurbulenceModels. Then, install solver by running ./Allwmake inside file myTwoPhaseEulerFoam.
 
+A typical test case is also given.
+
 In case of any problem, please send an email to: mrakovic@mas.bg.ac.rs (Milan Rakovic) or dradenkovic@mas.bg.ac.rs (Darko Radenkovic).

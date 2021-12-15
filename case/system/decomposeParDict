@@ -1,0 +1,52 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                    |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      decomposeParDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+numberOfSubdomains 6;
+
+method          hierarchical;
+
+hierarchicalCoeffs
+{
+    n               (1 6 1);
+    delta           0.001;
+    order           xyz;
+}
+
+
+
+// Optional decomposition constraints
+
+
+
+// ************************************************************************* //
+
+//      preservePatches
+//     {
+// //        //- Keep owner and neighbour on same processor for faces in patches
+// //        //  (only makes sense for cyclic patches. Not suitable for e.g.
+// //        //   cyclicAMI since these are not coupled on the patch level. Use
+// //        //   singleProcessorFaceSets for those)
+//         type    preservePatches;
+//         patches (".*");
+//     }
+//preservePatches (inout1_half1 inout2_half1);
+
+ 
+//preservePatches (sides1_half0 sides1_half1 sides2_half0 sides2_half1 inout1_half0 inout1_half1 inout2_half0 inout2_half1);
+
+// ************************************************************************* //
+
+
