@@ -1,0 +1,23 @@
+myTurbulenceModel.C
+
+myLESdelta = LES/myLESdeltas
+
+$(myLESdelta)/myLESdelta/myLESdelta.C
+
+wallFunctions = derivedFvPatchFields/wallFunctions
+
+myEpsilonWallFunctions = $(wallFunctions)/myEpsilonWallFunctions
+$(myEpsilonWallFunctions)/myEpsilonWallFunction/myEpsilonWallFunctionFvPatchScalarField.C
+$(myEpsilonWallFunctions)/myEpsilonWallFunctionEBRSM/myEpsilonWallFunctionEBRSMFvPatchScalarField.C
+
+nutWallFunctions = $(wallFunctions)/myNutWallFunctions
+$(nutWallFunctions)/myNutWallFunction/myNutWallFunctionFvPatchScalarField.C
+$(nutWallFunctions)/myNutKWallFunction/myNutKWallFunctionFvPatchScalarField.C
+
+kqRWallFunctions = $(wallFunctions)/kqRWallFunctions
+$(kqRWallFunctions)/myKqRWallFunction/myKqRWallFunctionFvPatchFields.C
+
+myOmegaWallFunctions = $(wallFunctions)/myOmegaWallFunctions
+$(myOmegaWallFunctions)/myOmegaWallFunction/myOmegaWallFunctionFvPatchScalarField.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmyTurbulenceModels

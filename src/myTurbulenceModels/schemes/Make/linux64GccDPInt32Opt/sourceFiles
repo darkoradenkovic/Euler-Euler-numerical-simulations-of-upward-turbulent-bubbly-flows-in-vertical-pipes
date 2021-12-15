@@ -1,0 +1,4 @@
+SOURCE = \
+myDEShybrid/myDEShybrid.C \
+
+# sources

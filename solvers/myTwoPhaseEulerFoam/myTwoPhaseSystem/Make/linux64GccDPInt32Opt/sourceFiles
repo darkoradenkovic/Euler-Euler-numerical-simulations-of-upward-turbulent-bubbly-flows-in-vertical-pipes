@@ -1,0 +1,22 @@
+SOURCE = \
+myPhaseModel/myPhaseModel.C \
+myDiameterModels/myDiameterModel/myDiameterModel.C \
+myDiameterModels/myDiameterModel/newDiameterModel.C \
+myDiameterModels/constantDiameter/constantDiameter.C \
+myDiameterModels/isothermalDiameter/isothermalDiameter.C \
+myDiameterModels/IATE/IATE.C \
+myDiameterModels/IATE/IATEsources/IATEsource/IATEsource.C \
+myDiameterModels/IATE/IATEsources/wakeEntrainmentCoalescence/wakeEntrainmentCoalescence.C \
+myDiameterModels/IATE/IATEsources/turbulentBreakUp/turbulentBreakUp.C \
+myDiameterModels/IATE/IATEsources/randomCoalescence/randomCoalescence.C \
+myBlendedInterfacialModel/blendingMethods/blendingMethod/blendingMethod.C \
+myBlendedInterfacialModel/blendingMethods/blendingMethod/newBlendingMethod.C \
+myBlendedInterfacialModel/blendingMethods/noBlending/noBlending.C \
+myBlendedInterfacialModel/blendingMethods/linear/linear.C \
+myBlendedInterfacialModel/blendingMethods/hyperbolic/hyperbolic.C \
+myPhasePair/myPhasePairKey/myPhasePairKey.C \
+myPhasePair/myPhasePair/myPhasePair.C \
+myPhasePair/orderedPhasePair/orderedPhasePair.C \
+myTwoPhaseSystem.C \
+
+# sources

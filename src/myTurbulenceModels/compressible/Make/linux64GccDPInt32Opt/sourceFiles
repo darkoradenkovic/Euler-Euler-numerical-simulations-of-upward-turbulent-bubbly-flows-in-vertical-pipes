@@ -1,0 +1,5 @@
+SOURCE = \
+myCompressibleMyTurbulenceModel.C \
+turbulentMyFluidThermoModels/turbulentMyFluidThermoModels.C \
+
+# sources

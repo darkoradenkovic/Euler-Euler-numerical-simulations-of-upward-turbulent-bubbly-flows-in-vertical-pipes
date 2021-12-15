@@ -1,0 +1,9 @@
+LIB_USER_SRC = $(WM_PROJECT_USER_DIR)/src
+
+myCompressibleMyTurbulenceModel.C
+turbulentMyFluidThermoModels/turbulentMyFluidThermoModels.C
+
+
+
+
+LIB = $(FOAM_USER_LIBBIN)/libmyCompressibleMyTurbulenceModels

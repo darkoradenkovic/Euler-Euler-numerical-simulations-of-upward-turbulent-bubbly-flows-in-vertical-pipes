@@ -1,0 +1,1 @@
+../turbulentMyFluidThermoModels/derivedFvPatchFields/turbulentTemperatureRadCoupledMixed/turbulentTemperatureRadCoupledMixedFvPatchScalarField.C

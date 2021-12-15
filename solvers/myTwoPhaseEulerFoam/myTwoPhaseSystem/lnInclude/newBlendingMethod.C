@@ -1,0 +1,1 @@
+../myBlendedInterfacialModel/blendingMethods/blendingMethod/newBlendingMethod.C

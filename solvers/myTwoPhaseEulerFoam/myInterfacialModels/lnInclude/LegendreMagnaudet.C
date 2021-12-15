@@ -1,0 +1,1 @@
+../myLiftModels/LegendreMagnaudet/LegendreMagnaudet.C

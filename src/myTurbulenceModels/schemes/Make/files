@@ -1,0 +1,5 @@
+LIB_USER_SRC = $(WM_PROJECT_USER_DIR)/src
+
+myDEShybrid/myDEShybrid.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmyTurbulenceModelSchemes

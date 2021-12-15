@@ -1,0 +1,61 @@
+# 1 "Make/options"
+# 1 "<built-in>"
+# 1 "<command-line>"
+
+
+
+
+
+
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+
+# 17 "/usr/include/stdc-predef.h" 3 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 6 "<command-line>" 2
+# 1 "Make/options"
+EXE_INC = -I$(LIB_SRC)/finiteVolume/lnInclude -I$(LIB_SRC)/meshTools/lnInclude -I$(LIB_SRC)/transportModels/compressible/lnInclude -I$(LIB_USER_SRC)/thermophysicalModels/basic/lnInclude -I$(LIB_SRC)/transportModels/incompressible/transportModel -I$(LIB_USER_SRC)/myTurbulenceModels/myTurbulenceModels/lnInclude -I$(LIB_USER_SRC)/myTurbulenceModels/compressible/lnInclude -I$(LIB_USER_SRC)/myTurbulenceModels/phaseCompressible/lnInclude -I../myTwoPhaseSystem/lnInclude
+# 11 "Make/options"
+
+LIB_LIBS = -L$(FOAM_USER_LIBBIN) -lmyCompressibleTwoPhaseSystem -lcompressibleTransportModels -lmyFluidThermophysicalModels -lmyspecie

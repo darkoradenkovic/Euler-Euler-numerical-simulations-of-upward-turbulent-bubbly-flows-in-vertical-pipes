@@ -1,0 +1,1 @@
+../myDragModels/segregated/segregated.H

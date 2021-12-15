@@ -1,0 +1,2 @@
+LIB_USER_SRC = $(WM_PROJECT_USER_DIR)/src
+LIB = $(FOAM_USER_LIBBIN)/libmyCompressibleEulerianInterfacialModels

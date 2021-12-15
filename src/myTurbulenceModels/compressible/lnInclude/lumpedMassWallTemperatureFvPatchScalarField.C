@@ -1,0 +1,1 @@
+../turbulentMyFluidThermoModels/derivedFvPatchFields/lumpedMassWallTemperature/lumpedMassWallTemperatureFvPatchScalarField.C

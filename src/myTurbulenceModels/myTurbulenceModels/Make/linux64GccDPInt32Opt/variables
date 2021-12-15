@@ -1,0 +1,7 @@
+myLESdelta = LES/myLESdeltas
+wallFunctions = derivedFvPatchFields/wallFunctions
+myEpsilonWallFunctions = $(wallFunctions)/myEpsilonWallFunctions
+nutWallFunctions = $(wallFunctions)/myNutWallFunctions
+kqRWallFunctions = $(wallFunctions)/kqRWallFunctions
+myOmegaWallFunctions = $(wallFunctions)/myOmegaWallFunctions
+LIB = $(FOAM_USER_LIBBIN)/libmyTurbulenceModels

@@ -1,0 +1,11 @@
+SOURCE = \
+myTurbulenceModel.C \
+$(myLESdelta)/myLESdelta/myLESdelta.C \
+$(myEpsilonWallFunctions)/myEpsilonWallFunction/myEpsilonWallFunctionFvPatchScalarField.C \
+$(myEpsilonWallFunctions)/myEpsilonWallFunctionEBRSM/myEpsilonWallFunctionEBRSMFvPatchScalarField.C \
+$(nutWallFunctions)/myNutWallFunction/myNutWallFunctionFvPatchScalarField.C \
+$(nutWallFunctions)/myNutKWallFunction/myNutKWallFunctionFvPatchScalarField.C \
+$(kqRWallFunctions)/myKqRWallFunction/myKqRWallFunctionFvPatchFields.C \
+$(myOmegaWallFunctions)/myOmegaWallFunction/myOmegaWallFunctionFvPatchScalarField.C \
+
+# sources

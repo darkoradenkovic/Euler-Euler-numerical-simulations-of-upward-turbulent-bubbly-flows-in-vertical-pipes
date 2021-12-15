@@ -1,0 +1,25 @@
+EXE_INC = \
+    -I../myTwoPhaseSystem/lnInclude \
+    -I../myInterfacialModels/lnInclude\
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/transportModels/compressible/lnInclude \
+    -I$(LIB_USER_SRC)/thermophysicalModels/basic/lnInclude \
+    -I$(LIB_SRC)/transportModels/incompressible/transportModel \
+    -I../../../src/myTurbulenceModels/compressible/lnInclude \
+    -I../../../src/myTurbulenceModels/myTurbulenceModels/lnInclude \
+    -I../../../src/myTurbulenceModels/phaseCompressible/lnInclude
+
+LIB_LIBS = \
+    -L$(FOAM_USER_LIBBIN) \
+    -lfiniteVolume \
+    -lfvOptions \
+    -lmeshTools \
+    -lcompressibleTransportModels \
+    -lmyFluidThermophysicalModels \
+    -lmyspecie \
+    -lmyTurbulenceModels \
+    -lmyCompressibleMyTurbulenceModels \
+    -lincompressibleTransportModels \
+    -lmyCompressibleTwoPhaseSystem \
+    -lmyCompressibleEulerianInterfacialModels
